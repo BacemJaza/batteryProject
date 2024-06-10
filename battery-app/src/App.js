@@ -3,7 +3,10 @@ import './App.css';
 function App() {
   return (
     <div>
-      <kbd className="kbd">A</kbd>
+      <kbd className="kbd">
+        <div className="mockup-window border border-base-300">
+  <div className="flex justify-center px-4 py-16 border-t border-base-300">Hello!</div>
+</div></kbd>
     </div>
   );
 }
