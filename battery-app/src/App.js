@@ -1,12 +1,18 @@
+// App.js
+import React, { useState } from 'react';
 import './App.css';
-import Headline from './layout/Headline';
-import React from 'react';
 import Navbar from './navbar';
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  const handleItemClick = (itemName) => {
+    setMessage(`Hello from ${itemName}`);
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar onItemClick={handleItemClick} />
       <section id="general">
         {/* Contenu de la section General Information */}
       </section>
@@ -22,8 +28,10 @@ function App() {
       <section id="performance">
         {/* Contenu de la section Performance and Durability */}
       </section>
+      <div>{message}</div>
     </div>
   );
 }
 
 export default App;
+
