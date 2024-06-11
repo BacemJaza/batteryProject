@@ -6,14 +6,6 @@ import Navbar from './navbar';
 function App() {
   return (
     <div>
-      <Headline/>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div>
       <Navbar />
       <section id="general">
         {/* Contenu de la section General Information */}
