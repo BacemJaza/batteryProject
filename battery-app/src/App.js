@@ -1,12 +1,10 @@
 import './App.css';
+import Headline from './layout/Headline';
 
 function App() {
   return (
     <div>
-      <kbd className="kbd">
-        <div className="mockup-window border border-base-300">
-  <div className="flex justify-center px-4 py-16 border-t border-base-300">Hello!</div>
-</div></kbd>
+      <Headline/>
     </div>
   );
 }
