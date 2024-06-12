@@ -1,7 +1,8 @@
 // App.js
 import React, { useState } from 'react';
 import './App.css';
-import Navbar from './navbar';
+import Navbar from './layout/navbar';
+import Headline from './layout/Headline';
 
 function App() {
   const [message, setMessage] = useState("");
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div>
+      <Headline/>
       <Navbar onItemClick={handleItemClick} />
       <section id="general">
         {/* Contenu de la section General Information */}
