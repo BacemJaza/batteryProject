@@ -14,3 +14,4 @@ function Navbar({ onItemClick }) {
 }
 
 export default Navbar;
+

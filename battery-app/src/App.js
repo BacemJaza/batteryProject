@@ -1,39 +1,35 @@
-// App.js
 import React, { useState } from 'react';
 import './App.css';
 import Navbar from './layout/navbar';
 import Headline from './layout/Headline';
+import GeneralInfoForm from './components/GeneralInfoForm';
+import BatteryMaterialAndCompositionForm from './components/batterymaterialandcompotionform';
+import DesignOfCircularityForm from './components/designofcircularityform';
+import PerformanceAndDurabilityForm from './components/performanceanddurabilityform';
+import SupplyChainInformationForm from './components/supplychaininformationform';
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [activeForm, setActiveForm] = useState(null);
 
   const handleItemClick = (itemName) => {
-    setMessage(`Hello from ${itemName}`);
+    // Mettez à jour l'état avec le nom de l'élément cliqué pour afficher le formulaire correspondant
+    setActiveForm(itemName);
   };
 
   return (
     <div>
-      <Headline/>
+      <Headline />
       <Navbar onItemClick={handleItemClick} />
-      <section id="general">
-        {/* Contenu de la section General Information */}
-      </section>
-      <section id="supply-chain">
-        {/* Contenu de la section Supply Chain Information */}
-      </section>
-      <section id="material">
-        {/* Contenu de la section Battery Material and Composition */}
-      </section>
-      <section id="circularity">
-        {/* Contenu de la section Design of Circularity */}
-      </section>
-      <section id="performance">
-        {/* Contenu de la section Performance and Durability */}
-      </section>
-      <div>{message}</div>
+      {/* Affichez le formulaire correspondant à l'état actif */}
+      {activeForm === "General Information" && <GeneralInfoForm />}
+      {activeForm === "Battery Material and Composition" && <BatteryMaterialAndCompositionForm />}
+      {activeForm === "Design of Circularity" && <DesignOfCircularityForm />}
+      {activeForm === "Performance and Durability" && <PerformanceAndDurabilityForm />}
+      {activeForm === "Supply Chain Information" && <SupplyChainInformationForm />}
+      {/* Ajoutez d'autres conditions pour afficher d'autres formulaires si nécessaire */}
+      {/* Contenu des autres sections */}
     </div>
   );
 }
 
 export default App;
-
