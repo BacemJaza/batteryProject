@@ -1,9 +1,8 @@
-// Navbar.js
 import React from 'react';
 
 function Navbar({ onItemClick }) {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 flex flex-wrap justify-center lg:justify-start">
       <a href="#general" className="btn btn-ghost text-xl" onClick={() => onItemClick("General Information")}>General Information</a>
       <a href="#supply-chain" className="btn btn-ghost text-xl" onClick={() => onItemClick("Supply Chain Information")}>Supply Chain Information</a>
       <a href="#material" className="btn btn-ghost text-xl" onClick={() => onItemClick("Battery Material and Composition")}>Battery Material and Composition</a>
