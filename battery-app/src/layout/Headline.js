@@ -20,10 +20,6 @@ const Headline = () => {
         <h4 className='text-3xl font-bold'>"Pushing the Limits of Transportation & Technology."</h4>
         <br/>
         <br/>
-        <p>
-        Interested in creating and publishing your own verifiable Battery Passport?
-        Contact us or RCS Global for a personal demo of our Battery Passport management system.
-        </p>
         <br/>
         <div className='flex'>
           <button className='border-solid rounded-lg border-4 mr-2 pl-4 pr-4 pt-1 pb-1 bg-[#3B97C6] text-white hover:bg-white hover:text-black hover:border-[#3B97C6] duration-300'>Get in touch</button>
