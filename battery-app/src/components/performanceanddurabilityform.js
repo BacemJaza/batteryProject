@@ -35,7 +35,7 @@ function PerformanceAndDurabilityForm() {
     const buttonClass = "bg-gray-300 hover:bg-gray-500 text-white font-bold p-1 rounded-full w-6 h-6 flex items-center justify-center";
 
     return (
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mt-12">
             {/* Form for Capacity, energy, SoH & voltage */}
             <div className="mb-4">
                 <div className="flex items-center justify-between">

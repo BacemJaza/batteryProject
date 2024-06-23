@@ -20,13 +20,14 @@ function DesignOfCircularityForm() {
     const buttonClass = "bg-gray-300 hover:bg-gray-500 text-white font-bold p-1 rounded-full w-6 h-6 flex items-center justify-center";
 
     return (
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mt-12">
             <div className="mb-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-2xl font-bold">Design of Circularity</h2>
                     <button onClick={toggleCircularityForm} className={buttonClass}>
                         {showCircularityForm ? (
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
                         ) : (

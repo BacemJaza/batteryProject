@@ -48,20 +48,20 @@ const toggleBatteryRawForm = () => {
             )}
         </button>
       </div>
-      <div className='flex'>
+      <div className='flex pb-10'>
       {showBatteryCompoForm && (
         <PieChart
           series={[
             {
               data: [
-                { id: 0, value: 10, label: 'series A' },
-                { id: 1, value: 15, label: 'series B' },
-                { id: 2, value: 2, label: 'series C' },
-                { id: 3, value: 5, label: 'series D' },
-                { id: 4, value: 7, label: 'series E' },
-                { id: 5, value: 8, label: 'series F' },
-                { id: 6, value: 5, label: 'series G' },
-                { id: 7, value: 10, label: 'series H' },
+                { id: 0, value: 7, label: 'Aliminium' },
+                { id: 1, value: 14, label: 'Copper' },
+                { id: 2, value: 3, label: 'Binder' },
+                { id: 3, value: 2, label: 'Carbon black' },
+                { id: 4, value: 16, label: 'Graphite' },
+                { id: 5, value: 16, label: 'Plastic' },
+                { id: 6, value: 31, label: 'LNMCO' },
+                { id: 7, value: 12, label: 'Electrolyte' },
               ],
             },
           ]}

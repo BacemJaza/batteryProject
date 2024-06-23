@@ -16,6 +16,8 @@ function SupplyChainInformationForm() {
   //   setInformation('');
   // };
   const [showSupplyChainForm, setshowSupplyChainForm] = useState(true);
+  const [authentified,setAuthentified] = useState(false);
+  const authStyle = {pointerEvents:"none",userSelect:"none",filter:"blur(10px)"}
   const toggleSupplyChainForm = () => {
     setshowSupplyChainForm(!showSupplyChainForm);
 };
@@ -23,7 +25,7 @@ function SupplyChainInformationForm() {
   return (
     <div className='flex-col justify-center p-10'>
       <div className='flex mx-auto justify-between w-[50%]'>
-        <h2 className="text-2xl font-bold">Battery raw Material with category uses</h2>
+        <h2 className="text-2xl font-bold">Supply Chain Information</h2>
         <button onClick={toggleSupplyChainForm} className='w-fit rounded-full bg-[#D1D5DB]'>
             {showSupplyChainForm ? (
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,7 +41,7 @@ function SupplyChainInformationForm() {
       <div className='flex justify-center p-5'>
       {showSupplyChainForm && (
         <div className="overflow-x-auto">
-          <table className="table bg-[#F3F4F6] text-lg">
+          <table className="table bg-[#F3F4F6] text-lg" style={!authentified?authStyle:{}}>
             {/* head */}
             <thead>
               <tr className='text-lg'>
@@ -73,6 +75,16 @@ function SupplyChainInformationForm() {
               </tr>
             </tbody>
           </table>
+          {!authentified&&(
+            <div className='flex-col relative top-[-50%]'>
+              <button className="btn text-white bg-[#3B97C6] w-auto flex mx-auto mb-2">Login with your credentials</button>
+              <div className='text-center text-lg font-bold'>
+                If you want to know more about that battery, <br/> login with your credentials!
+              </div>
+            </div>
+            
+        
+        )}
       </div>
       )}
       </div>
