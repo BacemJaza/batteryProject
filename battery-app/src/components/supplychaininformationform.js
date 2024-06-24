@@ -26,7 +26,7 @@ function SupplyChainInformationForm() {
     <div className='flex-col justify-center p-10'>
       <div className='flex mx-auto justify-between w-[50%]'>
         <h2 className="text-2xl font-bold">Supply Chain Information</h2>
-        <button onClick={toggleSupplyChainForm} className='w-fit rounded-full bg-[#D1D5DB]'>
+        <button onClick={toggleSupplyChainForm} className='w-fit rounded-full bg-[#D1D5DB] hover:bg-gray-500'>
             {showSupplyChainForm ? (
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

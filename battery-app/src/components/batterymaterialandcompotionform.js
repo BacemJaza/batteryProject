@@ -36,7 +36,7 @@ const toggleBatteryRawForm = () => {
     <div className='flex-col justify-center p-10'>
       <div className='flex mx-auto justify-between w-[50%] mb-5'>
         <h2 className="text-2xl font-bold">Battery Composition and Capacity Information</h2>
-        <button onClick={toggleBatteryCompoForm} className='w-fit rounded-full bg-[#D1D5DB]'>
+        <button onClick={toggleBatteryCompoForm} className='w-fit rounded-full bg-[#D1D5DB] hover:bg-gray-500'>
             {showBatteryCompoForm ? (
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -72,7 +72,7 @@ const toggleBatteryRawForm = () => {
       </div>
       <div className='flex mx-auto justify-between w-[50%]'>
         <h2 className="text-2xl font-bold">Battery raw Material with category uses</h2>
-        <button onClick={toggleBatteryRawForm} className='w-fit rounded-full bg-[#D1D5DB]'>
+        <button onClick={toggleBatteryRawForm} className='w-fit rounded-full bg-[#D1D5DB] hover:bg-gray-500'>
             {showBatteryRawForm ? (
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
