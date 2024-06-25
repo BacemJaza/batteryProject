@@ -10,6 +10,8 @@ import SupplyChainInformationForm from './components/supplychaininformationform'
 
 function App() {
   const [activeForm, setActiveForm] = useState(null);
+  const [authentified,setAuthentified] = useState(false);
+  const authStyle = {pointerEvents:"none",userSelect:"none",filter:"blur(10px)"}
 
   const handleItemClick = (itemName) => {
     setActiveForm(itemName);
@@ -24,7 +26,7 @@ function App() {
       {activeForm === "Battery Material and Composition" && <BatteryMaterialAndCompositionForm />}
       {activeForm === "Design of Circularity" && <DesignOfCircularityForm />}
       {activeForm === "Performance and Durability" && <PerformanceAndDurabilityForm />}
-      {activeForm === "Supply Chain Information" && <SupplyChainInformationForm />}
+      {activeForm === "Supply Chain Information" && <SupplyChainInformationForm/>}
       {/* Ajoutez d'autres conditions pour afficher d'autres formulaires si nécessaire */}
       
       {/* Ajoutez le composant Footer à la fin */}
