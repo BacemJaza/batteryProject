@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
 import Navbar from './layout/navbar';
 import Headline from './layout/Headline';
+import Footer from './layout/footer';
 import GeneralInfoForm from './components/GeneralInfoForm';
 import BatteryMaterialAndCompositionForm from './components/batterymaterialandcompotionform';
 import DesignOfCircularityForm from './components/designofcircularityform';
@@ -12,7 +12,6 @@ function App() {
   const [activeForm, setActiveForm] = useState(null);
 
   const handleItemClick = (itemName) => {
-    // Mettez à jour l'état avec le nom de l'élément cliqué pour afficher le formulaire correspondant
     setActiveForm(itemName);
   };
 
@@ -27,7 +26,9 @@ function App() {
       {activeForm === "Performance and Durability" && <PerformanceAndDurabilityForm />}
       {activeForm === "Supply Chain Information" && <SupplyChainInformationForm />}
       {/* Ajoutez d'autres conditions pour afficher d'autres formulaires si nécessaire */}
-      {/* Contenu des autres sections */}
+      
+      {/* Ajoutez le composant Footer à la fin */}
+      <Footer />
     </div>
   );
 }
