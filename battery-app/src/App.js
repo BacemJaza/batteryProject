@@ -10,7 +10,7 @@ import SupplyChainInformationForm from './components/supplychaininformationform'
 
 function App() {
   const [activeForm, setActiveForm] = useState(null);
-  const [authentified,setAuthentified] = useState(false);
+  const [authentified,setAuthentified] = useState(true);
   const authStyle = {pointerEvents:"none",userSelect:"none",filter:"blur(10px)"}
 
   const handleItemClick = (itemName) => {
