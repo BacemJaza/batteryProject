@@ -1,14 +1,24 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faCalendar, faFilter, faBolt, faIdCard, faFlask, faBatteryFull, faBalanceScale, faInfoCircle, faClock, faTag, faPassport, faIndustry } from '@fortawesome/free-solid-svg-icons';
+import AuthLayout from '../layout/AuthLayout';
 
-function GeneralInfoForm() {
+function GeneralInfoForm({auth,style}) {
   return (
     <div className="max-w-4xl mx-auto p-4 mt-12">
       <h2 className="text-2xl font-bold mb-4">EV Battery</h2>
-      <p className="mb-4">
+      <div >
+        {/* authentification style */}
+      <p className="mb-4" style={!auth?style:{}}> 
+        
         An electric vehicle battery (EVB, also known as a traction battery) is a rechargeable battery used to power the electric motors of a battery electric vehicle (BEV) or hybrid electric vehicle (HEV). Electric vehicle batteries differ from starting, lighting, and ignition (SLI) batteries, as they are typically lithium-ion batteries that are designed for high power-to-weight ratio and energy density. Smaller, lighter batteries are desirable because they reduce the weight of the vehicle and therefore improve its performance. Compared to liquid fuels, most current battery technologies have much lower specific energy, and this often impacts the maximum range of all-electric vehicles. Unlike earlier battery chemistries, notably nickel-cadmium, lithium-ion batteries can be discharged and recharged daily and at any state of charge. Other types of rechargeable batteries used in electric vehicles include lead–acid, nickel-cadmium, nickel–metal hydride, and others.
       </p>
+      {/* {!auth&&(
+          <AuthLayout/>
+        )} */}
+
+      </div>
+      
       <div className="flex space-x-4 mb-4">
         <div className="flex-1 bg-gray-100 p-4 rounded shadow">
           <h3 className="font-bold">Greenhouse Gas</h3>
@@ -39,7 +49,6 @@ function GeneralInfoForm() {
             <span className="inline-block w-3 h-3 bg-green-400 rounded-full ml-2"></span>
           </p>
         </div>
-
         <div className="w-1/4 bg-gray-100 p-4 rounded shadow">
           <h3 className="font-bold">Human Rights</h3>
           <p>Score</p>

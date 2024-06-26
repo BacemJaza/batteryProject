@@ -22,7 +22,7 @@ function App() {
       <Headline />
       <Navbar onItemClick={handleItemClick} />
       {/* Affichez le formulaire correspondant à l'état actif */}
-      {activeForm === "General Information" && <GeneralInfoForm />}
+      {activeForm === "General Information" && <GeneralInfoForm auth={authentified} style={authStyle}/>}
       {activeForm === "Battery Material and Composition" && <BatteryMaterialAndCompositionForm />}
       {activeForm === "Design of Circularity" && <DesignOfCircularityForm />}
       {activeForm === "Performance and Durability" && <PerformanceAndDurabilityForm />}
