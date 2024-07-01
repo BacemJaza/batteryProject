@@ -7,6 +7,8 @@ import BatteryMaterialAndCompositionForm from './components/batterymaterialandco
 import DesignOfCircularityForm from './components/designofcircularityform';
 import PerformanceAndDurabilityForm from './components/performanceanddurabilityform';
 import SupplyChainInformationForm from './components/supplychaininformationform';
+import { faCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
   const [activeForm, setActiveForm] = useState(null);
@@ -28,7 +30,10 @@ function App() {
       {activeForm === "Performance and Durability" && <PerformanceAndDurabilityForm />}
       {activeForm === "Supply Chain Information" && <SupplyChainInformationForm/>}
       {/* Ajoutez d'autres conditions pour afficher d'autres formulaires si nécessaire */}
-      
+      {!activeForm && <div className='flex flex-col mx-auto justify-center w-[50%] text-2xl font-bold mt-[10%]'>
+        <FontAwesomeIcon icon={faCircleUp} />
+        <p className='flex mx-auto'>Select one of the items to view information.</p>
+        </div>}
       {/* Ajoutez le composant Footer à la fin */}
       <Footer />
     </div>

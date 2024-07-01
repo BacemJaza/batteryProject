@@ -2,20 +2,18 @@ import React from 'react'
 
 const battery = {
     generalInformation:{
-        identification:{
             batteryPassportId:"",
             batteryId:"",
-            respEconomicOperatorId:"",
             ManifacturerId:"",
             manufacturingDate:"",
-            manifacturingPlace:""
-
-        },
-        generalCharestatics:{
+            manifacturingPlace:"",
             batteryCategory:"",
             batteryWeight:"",
-            batteryStatus:""
-        },
+            batteryStatus:"",
+            euDeclaration:"",
+            resultsOfTestReports:"",
+            carbonFootprintPerformanceClass:"",
+            co2Footprint:""
 
     },
     batteryMaterialsCompositions:{
@@ -36,32 +34,91 @@ const battery = {
         }
     },
     supplyChain:{
-        dueDelegenceReport:{
-            information: "" // representation to document
-        }, 
-        additionalVoluntary:{
-            scAssurances: "", // representation to document (and string)
-            euTaxonomyDisclosureStatement:"", //representation to document
-            sustainabilityReport:"", //representation to document
-        }
+        dueDelegenceReport:"",
+        thirdPartySCAssurances: "", // representation to document (and string)
+        euTaxonomyDisclosureStatement:"", //representation to document
+        sustainabilityReport:"", //representation to document
     },
     performanceAndDurability:{
-        capEnergySOHVoltage:{
-            ubeCertified:"", //kWh (Only EVbattery)
-            ubeMesured:"", //Wh - persons with a legitimate interest - Dynamic - Individual battery (Only EVbattery)
-            soce:"", //integer (%) - persons with a legitimate interest - Dynamic (Only EVbattery)
-            ratedCapacuty:"", //Integer 
-            remainingCapacity:"", //Integer - dynamic - persons with a legitimate interest
-            capacityFade:"", //Integer - dynamic - persons with a legitimate interest
-            soc:"",  //Integer - dynamic - persons with a legitimate interest
+        batteryLifetime:{
+            expectedLifetime:"",
+            cycleLifeRefTest:"",
+            cRateOfReleventCycleLifeTest:"",
+            capacityThresholdForExhaustion:"",
+            soceThresholdForExhaustion:"",
+            warrantyPeriodOfBattery:"",
+            dateOfService:"" //persons with a legitimate interest
+        },
+        capacityAndPower:{
+            ratedCapacity:"",
             nominalVoltage:"",
+            minimumVoltage:"",
+            maximumVoltage:"",
+            originalPowerCapability:"",
+            maximumPermittedBatteryPower:""
+        },
+        tempretureConditions:{
+            lowerBoundary:"",
+            upperBoundary:""
+        },
+        internalResistance:{
+            cellLevel:"",
+            packLevel:""
         },
         roundTripEnergyEfficiencyAndSelfDischarge:{ // only lmt and Stationary >2kWh
-            iSelfDischargingRate:"", //Decimal - persons with a legitimate interest
-            currentSelfDischargingRate:"", //Decimal - Dynamic - persons with a legitimate interest
-            evolution:"", //Integer - Dynamic - persons with a legitimate interest
+            initialSelfDischargingRate:"", //Decimal - persons with a legitimate interest
+            initialRTEfficiency:"", //Integer - Dynamic - persons with a legitimate interest
+            rtEnergyEfficiency:""
+        },
+        negativeEvents:{
+            informationOnAccidents:"", //persons with a legitimate interest
+            numberOfDeepDischargeEvents:"" //persons with a legitimate interest
         }
+
+
+        // capEnergySOHVoltage:{
+        //     ubeCertified:"", //kWh (Only EVbattery)
+        //     ubeMesured:"", //Wh - persons with a legitimate interest - Dynamic - Individual battery (Only EVbattery)
+        //     soce:"", //integer (%) - persons with a legitimate interest - Dynamic (Only EVbattery)
+        //     ratedCapacuty:"", //Integer 
+        //     remainingCapacity:"", //Integer - dynamic - persons with a legitimate interest
+        //     capacityFade:"", //Integer - dynamic - persons with a legitimate interest
+        //     soc:"",  //Integer - dynamic - persons with a legitimate interest
+        //     nominalVoltage:"",
+        // },
         
+        
+    },
+    designOfCircularity:{
+        design:{
+            postalAdress:"", //persons with a legitimate interest and the Commission
+            emailAdress:"", //persons with a legitimate interest and the Commission
+            webAdress:"",
+            partNumbersForComponents:"",
+            manualForRemoval:"",
+            manualForDisassembly:""
+            
+        },
+        batterySafetyRequirements:{
+            estinguishingAgent:"",
+            safetyMesures:"" //document - persons with a legitimate interest and the Commission
+        },
+        recycledAndRenewableContent:{
+            preNickelShare:"",
+            preCobaltShare:"",
+            preLithiumShare:"",
+            preLeadShare:"",
+            postNickelShare:"",
+            postCobaltShare:"",
+            postLithiumShare:"",
+            postLeadShare:"",
+            renewableContentShare:""
+
+        },
+        endOfLifeInformation:{
+            roleToWastePrevention:"",
+            roleToTheSeperateCollection:""
+        }
     }
 
 
