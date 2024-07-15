@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+
 
 function DesignOfCircularityForm() {
     const [showCircularityForm, setShowCircularityForm] = useState(false);
     const [showBatteryForm, setShowBatteryForm] = useState(false);
     const [showRecycledContentForm, setShowRecycledContentForm] = useState(false);
+    const [showEndofLifeinformationForm, setShowEndofLifeinformationForm] = useState(false);
 
     const toggleCircularityForm = () => {
         setShowCircularityForm(!showCircularityForm);
@@ -15,6 +19,10 @@ function DesignOfCircularityForm() {
 
     const toggleRecycledContentForm = () => {
         setShowRecycledContentForm(!showRecycledContentForm);
+    };
+
+    const toggleEndofLifeinformationForm = () => {
+        setShowEndofLifeinformationForm(!showEndofLifeinformationForm);
     };
 
     const buttonClass = "bg-gray-300 hover:bg-gray-500 text-white font-bold p-1 rounded-full w-6 h-6 flex items-center justify-center";
@@ -66,6 +74,22 @@ function DesignOfCircularityForm() {
                                             
 
                                     </tr>
+                                    <tr className="border-t border-gray-200">
+    <td className="font-semibold text-gray-600 text-left py-2">Manual for removal of the battery from the appliance</td>
+    <td className="text-gray-800 py-2 align-middle">
+        <a href="/" className="text-blue-900">
+            Download file <FontAwesomeIcon icon={faDownload} />
+        </a>
+    </td>
+</tr>
+<tr className="border-t border-gray-200">
+    <td className="font-semibold text-gray-600 text-left py-2">Manual for disassembly and dismantling of the battery pack</td>
+    <td className="text-gray-800 py-2 align-middle">
+        <a href="/" className="text-blue-900">
+            Download file <FontAwesomeIcon icon={faDownload} />
+        </a>
+    </td>
+</tr>
                                 </tbody>
                             </table>
                         </div>
@@ -104,10 +128,13 @@ function DesignOfCircularityForm() {
                                         <td className="text-gray-800 py-2 align-middle">Use CO2 or dry chemical extinguisher</td>
                                     </tr>
                                     <tr className="border-t border-gray-200">
-                                        <td className="font-semibold text-gray-600 text-left py-2">Safety measures/instructions</td>
-                                        <td className="text-gray-800 py-2 align-middle">1. Avoid exposure to open flames 2. Store in a cool and dry place</td>
-                                     
-                                    </tr>
+    <td className="font-semibold text-gray-600 text-left py-2">Safety measures/instructions</td>
+    <td className="text-gray-800 py-2 align-middle">
+        <a href="/" className="text-blue-900">
+            Download file <FontAwesomeIcon icon={faDownload} />
+        </a>
+    </td>
+</tr>
                                 </tbody>
                             </table>
                         </div>
@@ -177,6 +204,63 @@ function DesignOfCircularityForm() {
                                     <td className="font-semibold text-gray-600 text-left py-2">Renewable content share</td>
                                     <td className="text-gray-800 py-2 align-middle">20%</td>
                                 </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            <div className="mb-4">
+                <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-bold">End-of-Life information</h2>
+                    <button onClick={toggleEndofLifeinformationForm} className={buttonClass}>
+                        {showEndofLifeinformationForm ? (
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        ) : (
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+                {showEndofLifeinformationForm && (
+                    <div className="bg-gray-100 p-6 rounded-lg mt-2">
+                    <div className="overflow-x-auto">
+                        <table className="w-full table-fixed">
+                            <thead>
+                                <tr className="border-b border-gray-200">
+                                    <th className="font-semibold text-gray-600 text-left py-2">Information</th>
+                                    <th className="font-semibold text-gray-600 text-left py-2">Description</th>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                <tr className="border-t border-gray-200">
+    <td className="font-semibold text-gray-600 text-left py-2">Role of end-users in contributing to waste prevention</td>
+    <td className="text-gray-800 py-2 align-middle">
+        <a href="/" className="text-blue-900">
+            Download file <FontAwesomeIcon icon={faDownload} />
+        </a>
+    </td>
+</tr>
+<tr className="border-t border-gray-200">
+    <td className="font-semibold text-gray-600 text-left py-2">Role of end- users in contributing to the separate collection of waste batteries</td>
+    <td className="text-gray-800 py-2 align-middle">
+        <a href="/" className="text-blue-900">
+            Download file <FontAwesomeIcon icon={faDownload} />
+        </a>
+    </td>
+</tr>
+<tr className="border-t border-gray-200">
+    <td className="font-semibold text-gray-600 text-left py-2">Information on separate collection, take back, collection points and preparing for re-use, preparing for repurposing and recycling operations</td>
+    <td className="text-gray-800 py-2 align-middle">
+        <a href="/" className="text-blue-900">
+            Download file <FontAwesomeIcon icon={faDownload} />
+        </a>
+    </td>
+</tr>
                                 </tbody>
                             </table>
                         </div>
