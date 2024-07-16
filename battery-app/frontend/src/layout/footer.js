@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   const handleGuidanceClick = () => {
     // Remplacez cette URL par le lien spécifique que vous souhaitez utiliser
-    window.location.href = 'https://example.com'; 
+    window.open('https://thebatterypass.eu/', '_blank');
   };
 
   return (
