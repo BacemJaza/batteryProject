@@ -9,16 +9,9 @@ function BatteryMaterialAndCompositionForm() {
   const [showBatteryCompoForm, setShowBatteryCompoForm] = useState(true);
   const [showHazardousSubForm, setShowHazardousSubForm] = useState(true);
   const [showRelatedIdsForm,setShowRelatedIdsForm] = useState(true);
-  const [showConcentrationForm,setShowConcentrationForm] = useState(true);
   const [showImpactForm, setShowImpactForm] = useState(true);
-  const [showLocationForm,setLocationForm] = useState(true);
-  const [showRelatedHazClassForm,setShowRelatedHazClassForm] = useState(true)
   const [showCompoCAEForm,setShowCompoCAEForm] = useState(true)
-  const [showHazClassForm, setShowHazClassForm] = useState(true)
   const [showDescription,setShowDescription] = useState("cathode")
-  const [cathodeDescription, setCathodeDescription] = useState("");
-  const [anodeDescription, setAnodeDescription] = useState("")
-  const [electrolyteDescription, setElectrolyteDescription] = useState("")
 
   const toggleBatteryChemForm = () => {
     setShowBatteryChemForm(!showBatteryChemForm);
@@ -40,24 +33,8 @@ function BatteryMaterialAndCompositionForm() {
     setShowRelatedIdsForm(!showRelatedIdsForm);
   }
 
-  const toggleConcentrationForm = () => {
-    setShowConcentrationForm(!showConcentrationForm);
-  }
-
-  const toggleLocationForm = () => {
-    setLocationForm(!showLocationForm);
-  }
-
-  const toggleRelatedHazClassForm = () =>{
-    setShowRelatedHazClassForm(!showRelatedHazClassForm)
-  }
-
   const toggleCompoCAEForm = () =>{
     setShowCompoCAEForm(showCompoCAEForm);
-  }
-
-  const toggleHazClassForm = () =>{
-    setShowHazClassForm(!showHazClassForm)
   }
   const handleShowDescription = (event)=>{
     // console.log(event.target.id)
@@ -107,6 +84,63 @@ function BatteryMaterialAndCompositionForm() {
         </div>
       )}
       </div>
+      <div className='flex mx-auto justify-center'>
+      <div>
+      <div className='flex mx-auto justify-between'>
+        <h2 className="text-2xl font-bold">Battery raw Material</h2>
+        <button onClick={toggleBatteryRawForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
+            {showBatteryRawForm ? (
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+            ) : (
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                </svg>
+            )}
+        </button>
+      </div>
+      <div className='flex justify-center p-5'>
+      {showBatteryRawForm && (
+        <div className='flex mx-auto justify-center p-5 bg-[#F3F4F6] rounded-lg'>
+        <div className="overflow-x-auto">
+  <table className="table table-zebra">
+    {/* head */}
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Weigh %</th>
+      </tr>
+    </thead>
+    <tbody>
+      {/* row 1 */}
+      <tr>
+        <th>Nickel</th>
+        <td>12.1%</td>
+      </tr>
+      {/* row 2 */}
+      <tr>
+        <th>Carbon</th>
+        <td>3.5%</td>
+      </tr>
+      {/* row 3 */}
+      <tr>
+        <th>Steel</th>
+        <td>0.1%</td>
+      </tr>
+      <tr>
+        <th>Plastic</th>
+        <td>4.2%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      </div>
+      )}
+      </div>
+      </div>
+      
+      <div className='flex flex-col justify-center'>
       <div className='flex mx-auto justify-between w-[50%] mb-5'>
         <h2 className="text-2xl font-bold">Battery Component</h2>
         <button onClick={toggleBatteryCompoForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
@@ -138,32 +172,16 @@ function BatteryMaterialAndCompositionForm() {
               ],
             },
           ]}
-          width={1000}
-          height={500}
+          width={800}
+          height={350}
         />
       )}
       </div>
-      <div className='flex mx-auto justify-between w-[50%]'>
-        <h2 className="text-2xl font-bold">Battery raw Material</h2>
-        <button onClick={toggleBatteryRawForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
-            {showBatteryRawForm ? (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-            ) : (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                </svg>
-            )}
-        </button>
       </div>
-      <div className='flex justify-center p-5'>
-      {showBatteryRawForm && (
-        <div className='flex mx-auto min-w-[45%] justify-center p-5 bg-[#F3F4F6] rounded-lg'>
-        Text here
       </div>
-      )}
-      </div>
+      
+      
+      
 
       <div className='flex mx-auto justify-between w-[50%] mb-5'>
         <h2 className="text-2xl font-bold">Related identifiers of the cathode, anode, electrolyte materials</h2>
@@ -225,7 +243,7 @@ function BatteryMaterialAndCompositionForm() {
       </div>
 
       <div className='flex mx-auto justify-between w-[50%] mb-5'>
-        <h2 className="text-2xl font-bold">Name of hazardous substances</h2>
+        <h2 className="text-2xl font-bold">Hazardous substances information</h2>
         <button onClick={toggleHazardousSubForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
             {showHazardousSubForm ? (
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -241,93 +259,86 @@ function BatteryMaterialAndCompositionForm() {
       <div className='flex pb-10'>
       {showHazardousSubForm && (
         <div className='flex mx-auto min-w-[45%] justify-center p-5 bg-[#F3F4F6] rounded-lg'>
-        Text here
-      </div>
-      )}
-      </div>
-      <div className='flex mx-auto justify-between w-[50%] mb-5'>
-        <h2 className="text-2xl font-bold">Hazard classes</h2>
-        <button onClick={toggleHazClassForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
-            {showHazClassForm? (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-            ) : (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                </svg>
-            )}
-        </button>
-      </div>
-      <div className='flex pb-10'>
-      {showHazClassForm  && (
-        <div className='flex mx-auto min-w-[45%] justify-center p-5 bg-[#F3F4F6] rounded-lg'>
-        Text here
-      </div>
-      )}
-      </div>
-
-      <div className='flex mx-auto justify-between w-[50%] mb-5'>
-        <h2 className="text-2xl font-bold">Related identifiers of hazardous substances</h2>
-        <button onClick={toggleRelatedHazClassForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
-            {showRelatedHazClassForm ? (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-            ) : (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                </svg>
-            )}
-        </button>
-      </div>
-      <div className='flex pb-10'>
-      {showRelatedHazClassForm && (
-        <div className='flex mx-auto min-w-[45%] justify-center p-5 bg-[#F3F4F6] rounded-lg'>
-        Text here
-      </div>
-      )}
-      </div>
-
-      <div className='flex mx-auto justify-between w-[50%] mb-5'>
-        <h2 className="text-2xl font-bold">Location of hazardous substances</h2>
-        <button onClick={toggleLocationForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
-            {showLocationForm ? (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-            ) : (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                </svg>
-            )}
-        </button>
-      </div>
-      <div className='flex pb-10'>
-      {showLocationForm && (
-        <div className='flex mx-auto min-w-[45%] justify-center p-5 bg-[#F3F4F6] rounded-lg'>
-        Text here
-      </div>
-      )}
-      </div>
-      <div className='flex mx-auto justify-between w-[50%] mb-5'>
-        <h2 className="text-2xl font-bold">Concentration range of hazardous substances</h2>
-        <button onClick={toggleConcentrationForm} className='w-fit rounded-full bg-[#D1D5DB] text-white hover:bg-gray-500 p-2'>
-            {showConcentrationForm ? (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-            ) : (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                </svg>
-            )}
-        </button>
-      </div>
-      <div className='flex pb-10'>
-      {showConcentrationForm && (
-        <div className='flex mx-auto min-w-[45%] justify-center p-5 bg-[#F3F4F6] rounded-lg'>
-        Text here
+        <div className="overflow-x-auto">
+  <table className="table table-zebra">
+    {/* head */}
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Hazard classes</th>
+        <th>Related identifiers</th>
+        <th>Location</th>
+        <th>Concentration range</th>
+      </tr>
+    </thead>
+    <tbody>
+      {/* row 1 */}
+      <tr>
+      <td>Lead</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {/* row 2 */}
+      <tr>
+      <td>Cadmium</td>
+        <td></td>
+        
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      {/* row 3 */}
+      <tr>
+      <td>Mercury</td>
+        <td></td>
+        
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td>Nickel</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td>Cobalt</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td>Lithium</td>
+        <td></td>
+        
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td>Silver</td>
+        <td></td>
+        
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td>Manganese</td>
+        <td></td>
+        
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
       </div>
       )}
       </div>
@@ -347,24 +358,83 @@ function BatteryMaterialAndCompositionForm() {
       </div>
       <div className='flex pb-10'>
       {showImpactForm && (
-        <PieChart
-          series={[
-            {
-              data: [
-                { id: 0, value: 7, label: 'Aliminium' },
-                { id: 1, value: 14, label: 'Copper' },
-                { id: 2, value: 3, label: 'Binder' },
-                { id: 3, value: 2, label: 'Carbon black' },
-                { id: 4, value: 16, label: 'Graphite' },
-                { id: 5, value: 16, label: 'Plastic' },
-                { id: 6, value: 31, label: 'LNMCO' },
-                { id: 7, value: 12, label: 'Electrolyte' },
-              ],
-            },
-          ]}
-          width={1000}
-          height={500}
-        />
+        <div className='flex mx-auto min-w-[45%] p-5 bg-[#F3F4F6] rounded-lg'>
+        <div>
+        <div className='grid grid-cols-2'>
+            <h2 className='flex pr-[50px] '>Lead</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+          <div className='grid grid-cols-2'>
+            <h2 className='flex pr-[50px] '>Cadmium</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+            <div className='grid grid-cols-2'>
+            <h2 className='flex pr-20 '>Mercury</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+            <div className='grid grid-cols-2'>
+            <h2 className='flex pr-20 '>Nickel</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+          <div className='grid grid-cols-2'>
+            <h2 className='flex pr-[50px] '>Cobalt</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+          <div className='grid grid-cols-2'>
+            <h2 className='flex pr-[50px] '>Cadmium</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+          <div className='grid grid-cols-2'>
+            <h2 className='flex pr-[50px] '>Silver</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+          <div className='grid grid-cols-2'>
+            <h2 className='flex pr-[50px] '>Manganese</h2>
+            <div className='flex flex-col'>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' />description here</div>
+              <div className='flex items-center'><FontAwesomeIcon icon={faCircle} width='7px' className='p-1' /> description here</div>
+            </div>
+            </div>
+            <hr className='flex justify-center w-[690px]'></hr>
+        </div>
+        
+      </div>
       )}
       </div>
     </div>
